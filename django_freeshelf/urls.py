@@ -23,4 +23,5 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path("", books_views.list_books, name='list_books'),
     path("books/<int:pk>", books_views.book_details, name="book_details"),
+    path("accounts/login/", books_views.list_books, name="login"),
 ]
