@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<h1> Books </h1>
+
+{% for book in books %}
+<div>
+    <div>
+        <h5> {{ book.title }} </h5>
+        <p> {{ book.author }} </p>
+        <p> Released on: {{ book.created_at }} </p>
+        <a href="{{ book.url }}"> Link to Book </a>
+        <a href="{% url 'book_details' book.pk %}"> See Details </a>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
