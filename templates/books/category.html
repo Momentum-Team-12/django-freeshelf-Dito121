@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<h1> Books </h1>
+<h1> {{ category }} </h1>
 <a href="{% url 'login' %}"> Login </a>
 
 {% for book in books %}
@@ -10,7 +10,6 @@
     <div>
         <h3> {{ book.title }} </h3>
         <p> {{ book.author }} </p>
-        <p> {{ book.category }} </p>
         <p> Released on: {{ book.created_at }} </p>
         <a href="{{ book.url }}"> Link to Book </a>
         <a href="{% url 'book_details' book.pk %}"> See Details </a>
