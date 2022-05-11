@@ -3,13 +3,14 @@
 {% block content %}
 
 <h1> Books </h1>
-<a href="{% url 'login' %}"> Login </a>
+<a href="{% url 'login2' %}"> Login </a>
 
 {% for book in books %}
 <div>
     <div>
         <h3> {{ book.title }} </h3>
         <p> {{ book.author }} </p>
+        
         <p> {{ book.category }} </p>
         <p> Released on: {{ book.created_at }} </p>
         <a href="{{ book.url }}"> Link to Book </a>
@@ -18,5 +19,4 @@
 </div>
 
 {% endfor %}
-
 {% endblock %}

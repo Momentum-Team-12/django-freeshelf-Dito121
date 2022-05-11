@@ -8,8 +8,12 @@
         <h5> {{ book.author }} </h5>
         <p> Released on: {{ book.released_at }} </p>
         <p> Category: {{ book.category }} </p>
+        <form action="{% url 'add_favorite' pk=book.pk %}" method="POST">  </form>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"> Add to Favorites </button>
         <br>
-        <h5> About this book: </h5>
+        <h4> About this book: </h4>
         <p> {{ book.description }} </p>
     </div>
 </div>

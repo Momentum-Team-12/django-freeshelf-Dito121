@@ -20,9 +20,11 @@ from books import views as books_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('accounts/', include('registration.backends.simple.urls')),
-    path("", books_views.list_books, name='list_books'),
-    path("books/<int:pk>", books_views.book_details, name="book_details"),
-    path("accounts/login/", books_views.list_books, name="login"),
-    path("books/<slug:slug>", books_views.books_by_category, name="category")
+    path('accounts/', include('registration.backends.simple.urls'), name='login1'),
+    path("", books_views.list_books, name='list_books' ),
+    path('books/<int:pk>',books_views.book_details, name='book_details'),
+    path('accounts/login/', books_views.list_books, name='login2'),
+    path('books/<slug:slug>', books_views.books_by_category, name='category'),
+    path('favorites/', books_views.books_by_favorites, name='favorites'),
+    path('books/<int:pk>/favorites/new/', books_views.add_favorite, name='add_favorites'),
 ]
